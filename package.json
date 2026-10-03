@@ -1,0 +1,22 @@
+{
+  "name": "opencode-openlane",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Routine work proceeds. Risk gets your attention.",
+  "type": "module",
+  "exports": { ".": "./index.ts" },
+  "scripts": {
+    "test": "bun test src",
+    "test:integration": "bun src/integration.ts",
+    "test:calibration": "bun src/calibrate.ts",
+    "preflight": "bun src/preflight.ts",
+    "launch": "bun src/launch.ts",
+    "summary": "bun src/summary.ts",
+    "build": "bun build index.ts src/launch.ts src/preflight.ts src/summary.ts --target bun --external @opencode/plugin --external @opencode/util/patch --outdir dist"
+  },
+  "dependencies": {
+    "@opentelemetry/api": "1.9.0",
+    "@opencode/plugin": "2.0.20",
+    "@opencode/util": "2.0.20"
+  }
+}
